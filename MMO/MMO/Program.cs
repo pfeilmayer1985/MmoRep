@@ -26,7 +26,6 @@ namespace MMO
             
             Console.WriteLine($"A {T.UnitType} attacks a Soldier");
             T.Attack(S);
-            Console.WriteLine($"The {S.UnitType} received {T.Damage} damage and still has {S.Life} life.");
             S.ActualUnitStats();
             Console.WriteLine($"The {H.UnitType} helps the wounded {S.UnitType}. {S.UnitType} will receive {H.Healpoints} life points back.");
             H.HealUnit(S);
@@ -34,7 +33,8 @@ namespace MMO
             Console.WriteLine($"Both {S.UnitType} and {S1.UnitType} attack the {T.UnitType} and inflict {S.Damage+S1.Damage} total damage.");
             S.Attack(T);
             S1.Attack(T);
-            Console.WriteLine($"The {T.UnitType} has {T.Life} remaining life.");
+            T.ActualUnitStats();
+            //Console.WriteLine($"The {T.UnitType} has {T.Life} remaining life.");
 
             Console.ReadLine();
 
