@@ -34,7 +34,6 @@ namespace MMO
             S.Attack(T);
             S1.Attack(T);
             T.ActualUnitStats();
-            //Console.WriteLine($"The {T.UnitType} has {T.Life} remaining life.");
 
             Console.ReadLine();
 
