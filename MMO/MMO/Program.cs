@@ -11,18 +11,30 @@ namespace MMO
         static void Main(string[] args)
         {
 
-            Tanks T = new Tanks("Tank", 200, 25);
-            Heiler H = new Heiler("Medic", 100, 5, 15);
-            Soldier S = new Soldier("Soldier", 100, 10);
+            Tank T = new Tank("Tank", 200, 25);
+            Healer H = new Healer("Medic", 100, 5, 15);
+            Soldier S = new Soldier("Soldier One", 100, 10);
+            Soldier S1 = new Soldier("Soldier Two", 100, 12);
 
-            List<Units> playerUnits = new List<Units>() { T, H, S};
+            List<Units> playerUnits = new List<Units>() { T, H, S, S1};
 
             foreach (Units pU in playerUnits)
             {
                 pU.UnitDescription();
             }
 
-
+            
+            Console.WriteLine($"A {T.UnitType} attacks a Soldier");
+            T.Attack(S);
+            Console.WriteLine($"The {S.UnitType} received {T.Damage} damage and still has {S.Life} life.");
+            S.ActualUnitStats();
+            Console.WriteLine($"The {H.UnitType} helps the wounded {S.UnitType}. {S.UnitType} will receive {H.Healpoints} life points back.");
+            H.HealUnit(S);
+            Console.WriteLine($"{S.UnitType} received {H.Healpoints} life points and now has {S.Life} life.");
+            Console.WriteLine($"Both {S.UnitType} and {S1.UnitType} attack the {T.UnitType} and inflict {S.Damage+S1.Damage} total damage.");
+            S.Attack(T);
+            S1.Attack(T);
+            Console.WriteLine($"The {T.UnitType} has {T.Life} remaining life.");
 
             Console.ReadLine();
 

@@ -6,20 +6,22 @@ using System.Threading.Tasks;
 
 namespace MMO
 {
-    public class Heiler : Units
+    public class Healer : Units
     {
-        public int Heal { get; set; }
-        public Heiler(string unittype, int life, int damage, int heal)
+        public int Healpoints { get; set; }
+        public Healer(string unittype, int life, int damage, int healpoints)
         {
             UnitType = unittype;
             Life = life;
             Damage = damage;
-            Heal = heal;
+            Healpoints = healpoints;
+            MaxLife = life;
+
         }
-    
+
         public void HealUnit (Units healme)
         {
-            healme.Life += Heal;
+            healme.Life += Healpoints;
         }
 
     

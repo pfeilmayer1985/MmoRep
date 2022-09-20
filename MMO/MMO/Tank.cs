@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace MMO
 {
-    public class Tanks : Units
+    public class Tank : Units
     {
-        public Tanks(string unittype, int life, int damage)
+        public Tank(string unittype, int life, int damage)
         {
             UnitType = unittype;
             Life = life;
             Damage = damage;
+            MaxLife = life;
         }
 
         

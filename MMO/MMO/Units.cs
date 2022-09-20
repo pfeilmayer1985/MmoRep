@@ -11,12 +11,12 @@ namespace MMO
         public string UnitType { get; set; }
         public int Life { get; set; }
         public int Damage { get; set; }
-
-
+        public int MaxLife { get; set; }
 
         public void Attack(Units atack)
         {
             atack.Life -= Damage;
+            
         }
 
 
@@ -27,7 +27,7 @@ namespace MMO
 
         public void ActualUnitStats()
         {
-            Console.WriteLine($"This {this.GetType().Name} has taken a {Damage} hit points damage and hast {Life} remaining life");
+            Console.WriteLine($"This {this.GetType().Name} has taken {MaxLife-Life} damage and hast {Life} remaining life");
         }
 
 

@@ -13,6 +13,8 @@ namespace MMO
             UnitType = unittype;
             Life = life;
             Damage = damage;
+            MaxLife = life;
+
         }
     }
 }
